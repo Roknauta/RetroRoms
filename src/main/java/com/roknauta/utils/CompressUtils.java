@@ -1,7 +1,7 @@
 package com.roknauta.utils;
 
 import com.roknauta.DetalheExecucao;
-import com.roknauta.RomsRetroException;
+import com.roknauta.RetroRomsException;
 import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.archivers.ArchiveInputStream;
 import org.apache.commons.compress.archivers.ArchiveStreamFactory;
@@ -82,7 +82,7 @@ public class CompressUtils {
         try (FileOutputStream fos = new FileOutputStream(file)) {
             IOUtils.copy(inputStream, fos);
         } catch (IOException e) {
-            throw new RomsRetroException(file.getName(), e);
+            throw new RetroRomsException(file.getName(), e);
         }
     }
 

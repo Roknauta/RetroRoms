@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class AppFileUtils {
 
-    public static final String ACCEPTED_REGIONS = "USA,Brazil,Europe,World";
+    public static final String ACCEPTED_REGIONS = "USA,Brazil,Europe,World,Japan,Australia,Canada,France,Germany,Italy,Spain,Netherlands,Sweden,Korea,Hong Kong,China";
 
     public static boolean isValid(String fullName) {
         List<String> invalidWords = List.of("Beta", "Proto", "Sample");

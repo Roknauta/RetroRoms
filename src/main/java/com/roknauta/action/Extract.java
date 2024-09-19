@@ -14,21 +14,24 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.function.Predicate;
 
 public class Extract {
 
-    private static final String DEST_BASE = "/home/douglas/ROMS";
-    private static final String PACKS = "/mnt/1A7A2CA67A2C809D/Games/Packs";
+    private static final String DEST_BASE = "/home/douglas/roms";
+    private static final String PACKS = "/run/media/douglas/Seagate/Games/Packs";
 
-    public void process() throws IOException {
-        /*Sistema sistema = Sistema.NDS;
+    public void processar(Sistema sistema) throws IOException {
         if (!Paths.get(DEST_BASE + File.separator + sistema.getFolder() + File.separator + "Info da Execução.txt")
             .toFile().exists()) {
             processarSistema(sistema);
-        }*/
-        processarSistema(Sistema.NDS);
+        }
+    }
+
+    public void processar() throws IOException {
+        for (Sistema sistema : Sistema.values()) {
+            processar(sistema);
+        }
     }
 
     private void processarSistema(Sistema sistema) throws IOException {
